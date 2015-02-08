@@ -40,3 +40,15 @@ void LiftMechanism::InitDefaultCommand() {
 void LiftMechanism::MoveLift(Joystick* stick){
 	liftMotor->Set(0.5);
 }
+
+void LiftMechanism::StopLift(){
+	liftMotor->Set(0);
+}
+
+void LiftMechanism::AutoRaise() {
+	liftMotor->Set(0.5);
+}
+
+void LiftMechanism::AutoLower(){
+	liftMotor->Set(-0.5);
+}
