@@ -11,6 +11,9 @@
 
 
 #include "autoCmd1.h"
+#include "autoLowerLift.h"
+#include "autoRaiseLift.h"
+#include "autoDrive.h"
 
 autoCmd1::autoCmd1() {
 	// Add Commands here:
@@ -29,4 +32,8 @@ autoCmd1::autoCmd1() {
 	// e.g. if Command1 requires chassis, and Command2 requires arm,
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
+
+	AddSequential(new autoRaiseLift());
+	AddSequential(new autoDrive());
+	AddSequential(new autoLowerLift());
 }
